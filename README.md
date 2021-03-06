@@ -1,4 +1,6 @@
-# primevue-test
+# primevue-temperatures
+
+The project aims at learning primevue basics and at the same time making a couple of usable visualizations for the personal use.
 
 ## Project setup
 ```
