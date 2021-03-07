@@ -1,17 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <TemperatureView :date="currentDate" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TemperatureView from "./views/TemperatureView.vue";
+import { defineComponent } from "vue";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+export default defineComponent({
+  name: "App",
+  components: { TemperatureView },
+  data() {
+    return {
+      currentDate: new Date()
+    }
+  },
+});
 </script>
 
 <style>
@@ -23,4 +27,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-</style>
+</style>}
