@@ -1,11 +1,46 @@
 <template>
-<h1>Measured temperatures</h1>
-    <DataTable :value="temperatures">
-        <Column field="id" header="ID"></Column>
-        <Column field="temperature" header="Temperature"></Column>
-        <Column field="humidity" header="Humidity"></Column>
-        <Column field="measurementDate" header="Date"></Column>
-    </DataTable>
+  <h1>Measured temperatures</h1>
+  <DataTable
+    :value="temperatures"
+    class="p-datatable-striped p-datatable-sm"
+    :paginator="true"
+    :rows="10"
+  >
+    <Column
+      field="id"
+      header="ID"
+      sortable="true"
+      headerStyle="color: #ffffff; background: #55b48c;"
+      style="width: 170px"
+    ></Column>
+    <Column
+      field="temperature"
+      header="Temperature"
+      sortable="true"
+      headerStyle="color: #ffffff; background: #55b48c;"
+      style="width: 120px"
+    ></Column>
+    <Column
+      field="humidity"
+      header="Humidity"
+      sortable="true"
+      headerStyle="color: #ffffff; background: #55b48c;"
+      style="width: 120px"
+    ></Column>
+    <Column
+      field="measurementDate"
+      header="Date"
+      sortable="true"
+      headerStyle="color: #ffffff; background: #55b48c;"
+      style="width: 120px"
+    ></Column>
+    <template #paginatorLeft>
+      <Button type="button" icon="pi pi-refresh" />
+    </template>
+    <template #paginatorRight>
+      <Button type="button" icon="pi pi-cloud" />
+    </template>
+  </DataTable>
 </template>
 
 <script>
@@ -75,7 +110,7 @@ export default defineComponent({
           measurementDate: "1615146253813",
         },
       ],
-    };
+    }
   },
 });
 </script>
