@@ -12,7 +12,7 @@ import TemperatureView from "./views/TemperatureView.vue";
 import TemperatureTable from "./components/TemperatureTable.vue";
 
 const client = new ApolloClient({
-  uri: "http://37.120.176.60:4000/",
+  uri: process.env.VUE_APP_GRAPHQL_API,
   cache: new InMemoryCache(),
 });
 
